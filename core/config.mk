@@ -458,8 +458,8 @@ endif
 # See envsetup.mk for a description of SCAN_EXCLUDE_DIRS
 FIND_LEAVES_EXCLUDES := $(addprefix --prune=, $(SCAN_EXCLUDE_DIRS) .repo .git)
 
-ifneq ($(MIKU_BUILD),)
-include vendor/miku/config/BoardConfigMiku.mk
+ifneq ($(HSIN_BUILD),)
+include vendor/hsin/config/BoardConfigHsin.mk
 endif
 
 # The build system exposes several variables for where to find the kernel
@@ -1305,11 +1305,11 @@ include $(BUILD_SYSTEM)/sysprop_config.mk
 # consistency with those defined in BoardConfig.mk files.
 include $(BUILD_SYSTEM)/android_soong_config_vars.mk
 
-ifneq ($(MIKU_BUILD),)
-ifneq ($(wildcard device/miku/sepolicy/common/sepolicy.mk),)
+ifneq ($(HSIN_BUILD),)
+ifneq ($(wildcard device/hsin/sepolicy/common/sepolicy.mk),)
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
-$(eval include device/miku/sepolicy/common/sepolicy.mk)
+$(eval include device/hsin/sepolicy/common/sepolicy.mk)
 endif
 endif
 

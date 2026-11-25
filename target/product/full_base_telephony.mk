@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2026 Hsin OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,7 +27,7 @@ PRODUCT_VENDOR_PROPERTIES := \
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-ifeq ($(MIKU_BUILD),)
+ifeq ($(HSIN_BUILD),)
 PRODUCT_COPY_FILES += \
     device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 endif

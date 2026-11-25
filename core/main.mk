@@ -211,8 +211,8 @@ endif
 BUILD_WITHOUT_PV := true
 
 # ------------------------------------------------------------
-# Include Miku UI vendor specific additions to build properties
--include vendor/miku/build/core/main.mk
+# Include Hsin OS vendor specific additions to build properties
+-include vendor/hsin/build/core/main.mk
 
 # ------------------------------------------------------------
 # Define a function that, given a list of module tags, returns

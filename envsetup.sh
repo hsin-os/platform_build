@@ -1,4 +1,5 @@
 # Copyright (C) 2022 The Android Open Source Project
+# Copyright (C) 2026 Hsin OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -149,12 +150,12 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
-    if (echo -n $1 | grep -q -e "^miku_") ; then
-        MIKU_BUILD=$(echo -n $1 | sed -e 's/^miku_//g')
+    if (echo -n $1 | grep -q -e "^hsin_") ; then
+        HSIN_BUILD=$(echo -n $1 | sed -e 's/^hsin_//g')
     else
-        MIKU_BUILD=
+        HSIN_BUILD=
     fi
-    export MIKU_BUILD
+    export HSIN_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_RELEASE= \
@@ -530,16 +531,16 @@ function _lunch_meat()
 
     if ! check_product $product
     then
-        # if we can't find a product, try to grab it off the Diva Room GitHub
+        # if we can't find a product, try to grab it off the Hsin OS GitHub
         T=$(gettop)
         cd $T > /dev/null
-        vendor/miku/build/tools/roomservice.py $product
+        vendor/hsin/build/tools/roomservice.py $product
         cd - > /dev/null
         check_product $product
     else
         T=$(gettop)
         cd $T > /dev/null
-        vendor/miku/build/tools/roomservice.py $product true
+        vendor/hsin/build/tools/roomservice.py $product true
         cd - > /dev/null
     fi
 

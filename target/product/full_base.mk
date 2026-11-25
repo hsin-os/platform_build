@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2026 Hsin OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -45,7 +46,7 @@ PRODUCT_VENDOR_PROPERTIES := \
 PRODUCT_LOCALES := en_US
 
 # Get some sounds
-ifeq ($(MIKU_BUILD),)
+ifeq ($(HSIN_BUILD),)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 else
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage14.mk)

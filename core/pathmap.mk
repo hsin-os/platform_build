@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2026 Hsin OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -93,4 +94,4 @@ FRAMEWORKS_BASE_SUBDIRS := \
 FRAMEWORKS_BASE_JAVA_SRC_DIRS := \
 	$(addprefix frameworks/base/,$(FRAMEWORKS_BASE_SUBDIRS))
 
--include vendor/miku/build/core/pathmap.mk
+-include vendor/hsin/build/core/pathmap.mk

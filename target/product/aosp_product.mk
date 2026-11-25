@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2019 The Android Open Source Project
+# Copyright (C) 2026 Hsin OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_product.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_product.mk)
 
 # Default AOSP sounds
-ifeq ($(MIKU_BUILD),)
+ifeq ($(HSIN_BUILD),)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 else
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage14.mk)
@@ -41,7 +42,7 @@ PRODUCT_PACKAGES += \
 
 # Telephony:
 #   Provide a APN configuration to GSI product
-ifeq ($(MIKU_BUILD),)
+ifeq ($(HSIN_BUILD),)
 PRODUCT_COPY_FILES += \
     device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 endif
